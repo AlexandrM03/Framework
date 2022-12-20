@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DriverSingleton {
-    private static final String SELENOID_URI = "http://" + System.getProperty("ip") + "/wd/hub";
+    private static final String SELENOID_URI = "http://" + System.getProperty("ip") + ":4444/wd/hub";
     private static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
     private DriverSingleton() {
@@ -24,7 +24,7 @@ public class DriverSingleton {
                 capabilities.setCapability("browserVersion", "106.0");
             } else {
                 capabilities.setCapability("browserName", "chrome");
-                capabilities.setCapability("browserVersion", "108.0");
+                capabilities.setCapability("browserVersion", "107.0");
             }
             Map<String, Object> options = new HashMap<>();
             options.put("enableVNC", true);
